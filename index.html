@@ -25,13 +25,26 @@
         </ul>
     </nav>
     <div class="search-bar m-auto">
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline bg-warning" type="submit">Search</button>
-        </form>
+        <div class="d-flex">
+            <input class="form-control me-2" id="item-searched" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline bg-warning" onclick="searchingItem()" type="submit">Search</button>
+        </div>
     </div>
 
-    <div class="food-items">
+    <div id="food-items" class="mt-5">
+
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="food-container">
+            <!-- <div class="col">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
 
     </div>
 
