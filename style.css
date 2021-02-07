@@ -1,6 +1,7 @@
 body{
     max-width: 1280px;
     margin: auto;
+    margin-bottom: 40px;
 }
 .myNav{
     list-style: none;
@@ -19,7 +20,7 @@ body{
 }
 .card-style{
     width: 300px;
-    height: 380px;
+    height: 400px;
     overflow: hidden;
     border-radius: 10px;
     background-color: #F8F7F5;
@@ -28,4 +29,25 @@ body{
 a{
     text-decoration: none;
     color: black;
+}
+#meal-details{
+    padding-top: 40px;
+    justify-content: center;
+    width: 600px;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+#meal-details img{
+    width: 50%;
+    border-radius: 10px;
+}
+#ingredient-list{
+    list-style-type: none;
+    list-style-image: url('tick.ico');
+}
+#error-handle{
+    display: none;
+    color: crimson;
+    text-align: center;
 }
