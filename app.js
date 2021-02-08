@@ -45,14 +45,14 @@ const displayFoodItem = mealItem => {
         const mealDetails = `
         <div class="col">
         <div class="card card-style">
-            <div onclick="displayDetails(${mealId})">
+            <a href="#meal-details"><div onclick="displayDetails(${mealId})">
                 <img src="${mealThumb}" class="card-img-top " alt="${mealId}">
                 <div class="card-body">
                     <h5 class="card-title">${mealName}</h5>
                 </div>
 
             </div>
-            </div>
+            </div></a>
         </div>
         `
         mealDiv.innerHTML += mealDetails
