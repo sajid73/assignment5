@@ -1,10 +1,9 @@
 body{
-    max-width: 1280px;
-    margin: auto;
     margin-bottom: 40px;
 }
 .myNav{
     list-style: none;
+    margin-left: 70%;
 }
 .list-item{
     float: left;
@@ -13,7 +12,8 @@ body{
     font-weight: 500;
 }
 .search-bar{
-    max-width: 600px;
+    padding-top: 2vh;
+    width: 60%;
 }
 .card-title{
     text-align: center;
@@ -31,15 +31,17 @@ a{
     color: black;
 }
 #meal-details{
+    display: flex;
     padding-top: 40px;
-    justify-content: center;
-    width: 600px;
+    width: 40%;
     display: none;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 #meal-details img{
+    object-fit: cover;
+    margin: auto;
     width: 50%;
+    height: 50%;
     border-radius: 10px;
 }
 #ingredient-list{
@@ -50,4 +52,9 @@ a{
     display: none;
     color: crimson;
     text-align: center;
+}
+@media only screen and (max-width: 600px) {
+    .me{
+        padding-left: 20%;
+    }
 }

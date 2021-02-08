@@ -17,19 +17,19 @@ const firstLetter = (letter) => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
         .then(res => res.json())
         .then(data => displayFoodItem(data))
-    .catch((error) => {
-        document.getElementById('error-handle').style.display = "block"
-    })
+        .catch((error) => {
+            document.getElementById('error-handle').style.display = "block"
+        })
 }
 
 // for searching meal by meal name
-const foodName= (mealName) => {
+const foodName = (mealName) => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
         .then(res => res.json())
         .then(data => displayFoodItem(data))
-    .catch((error) => {
-        document.getElementById('error-handle').style.display = "block"
-    })
+        .catch((error) => {
+            document.getElementById('error-handle').style.display = "block"
+        })
 }
 
 // showing result data
@@ -66,27 +66,47 @@ const displayDetails = (mealId) => {
     const detailscontainer = document.getElementById('meal-details')
     detailscontainer.style.display = "block"
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
-    .then(res => res.json())
-    .then(data => {
-        const items = data.meals[0]
-        const insertedItem =`
+        .then(res => res.json())
+        .then(data => {
+            const items = data.meals[0]
+            const insertedItem = `
         <img src="${items.strMealThumb}" width="500px" alt="">
-        <h2>${items.strMeal}</h2>
-        <h4>Ingredients</h4>
+        <h1>${items.strMeal}</h1>
+        <h5>Ingredients</h5>
         <ul id="ingredient-list">
-            
+        
         </ul>
         `
-        detailscontainer.innerHTML = insertedItem
-        const ingredientList = document.getElementById('ingredient-list')
+            detailscontainer.innerHTML = insertedItem
+            ingredientAdd(items.strIngredient1)
+            ingredientAdd(items.strIngredient2)
+            ingredientAdd(items.strIngredient3)
+            ingredientAdd(items.strIngredient4)
+            ingredientAdd(items.strIngredient5)
+            ingredientAdd(items.strIngredient6)
+            ingredientAdd(items.strIngredient7)
+            ingredientAdd(items.strIngredient8)
+            ingredientAdd(items.strIngredient9)
+            ingredientAdd(items.strIngredient10)
+            ingredientAdd(items.strIngredient11)
+            ingredientAdd(items.strIngredient12)
+            ingredientAdd(items.strIngredient13)
+            ingredientAdd(items.strIngredient14)
+            ingredientAdd(items.strIngredient15)
+            ingredientAdd(items.strIngredient16)
+            ingredientAdd(items.strIngredient17)
+            ingredientAdd(items.strIngredient18)
+            ingredientAdd(items.strIngredient19)
+            ingredientAdd(items.strIngredient20)
+        })
+}
+const ingredientAdd = (ingredientDetails) => {
+
+    if (ingredientDetails != '' && ingredientDetails != null) {
         const gradients = `
-            <li>${items.strIngredient1}</li>
-            <li>${items.strIngredient2}</li>
-            <li>${items.strIngredient3}</li>
-            <li>${items.strIngredient4}</li>
-            <li>${items.strIngredient5}</li>
-            <li>${items.strIngredient6}</li>
+            <li>${ingredientDetails}</li>
         `
-        ingredientList.innerHTML = gradients
-    })
+        document.getElementById('ingredient-list').innerHTML += gradients
+    }
+    console.log(ingredientDetails);
 }
